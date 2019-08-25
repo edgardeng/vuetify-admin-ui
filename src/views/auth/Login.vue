@@ -1,18 +1,12 @@
 <template>
   <div class="panel-wrapper">
     <span class="logo">
-      <img
-        src="../../assets/logo.svg"
-        alt=""
-      >
+      <img src="../../assets/logo.svg" alt="">
     </span>
 
     <div class="slogan-wrapper">
       <div class="slogan">
-        <img
-          src="../../assets/login-bg2.svg"
-          alt=""
-        >
+        <img src="" alt="">
       </div>
     </div>
 
@@ -20,15 +14,9 @@
       <v-app class="login-con">
         <!-- <v-spacer></v-spacer> -->
         <v-content>
-          <base-langbar />
-          <v-container
-            fluid
-            fill-height
-          >
-            <v-layout
-              align-center
-              justify-center
-            >
+          <base-langbar/>
+          <v-container fluid fill-height >
+            <v-layout align-center justify-center >
               <v-flex class="frame">
                 <h1 v-if="!isMobile">
                   {{ $t('common.loginN')}}
