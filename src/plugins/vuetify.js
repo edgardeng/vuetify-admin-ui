@@ -2,6 +2,7 @@ import Vue from 'vue';
 
 import Vuetify, {
   // Vuetify,
+  VContent,
   VApp,
   VAlert,
   VAutocomplete,
@@ -54,52 +55,16 @@ import Vuetify, {
   // transitions,
 } from 'vuetify/lib';
 
-// import Vue from 'vue'
-// import Vuetify, {
-//   VCard,
-//   VRating,
-//   VToolbar,
-// } from 'vuetify/lib'
-// import { Ripple } from 'vuetify/lib/directives'
-//
-// Vue.use(Vuetify, {
-//   components: {
-//     VCard,
-//     VRating,
-//     VToolbar,
-//   },
-//   directives: {
-//     Ripple,
-//   },
-// })
-//
-// export default new Vuetify({ ... })
-// const vuetify = new Vuetify({
-//   theme: {
-//     themes: {
-//       light: {
-//         primary: '#3f51b5',
-//         secondary: '#b0bec5',
-//         accent: '#8c9eff',
-//         error: '#b71c1c',
-//       },
-//     },
-//   },
-// })
-
 
 import * as directives from 'vuetify/lib/directives';
-import 'roboto-fontface/css/roboto/roboto-fontface.css';
-import 'material-design-icons-iconfont/dist/material-design-icons.css';
 import enLang from 'vuetify/es5/locale/en';
 import zhLang from 'vuetify/es5/locale/zh-Hans';
-import i18n from '../i18n';
 import Snackbar from '../components/snackbar/index';
-// import '../stylus/main.styl';
 
 Vue.use(Vuetify, {
   components: {
     VApp,
+    VContent,
     VAlert,
     VAutocomplete,
     VAvatar,
@@ -155,7 +120,7 @@ Vue.use(Vuetify, {
 
 Vue.prototype.$message = Snackbar;
 
-const vuefity = new Vuetify({
+export default new Vuetify({
   theme: {
     primary: "#ee44aa",
     secondary: "#424242",
@@ -172,18 +137,17 @@ const vuefity = new Vuetify({
   },
 })
 
-
-Vue.prototype.$vuetify = vuefity
-
-const that = Vue.prototype;
-console.log(that);
-that.$locale = {
-  use(lang) {
-    i18n.locale = lang;
-    that.$vuetify.lang.current = lang === 'zh-CN' ? 'zhLang' : 'enLang';
-    localStorage.setItem('VUE-ADMIN-VUETIFY_LANGUAGE', lang);
-  },
-  current() {
-    return i18n.locale;
-  },
-};
+// Vue.prototype.$vuetify = vuefity
+//
+// const that = Vue.prototype;
+// console.log(that);
+// that.$locale = {
+//   use(lang) {
+//     i18n.locale = lang;
+//     that.$vuetify.lang.current = lang === 'zh-CN' ? 'zhLang' : 'enLang';
+//     localStorage.setItem('VUE-ADMIN-VUETIFY_LANGUAGE', lang);
+//   },
+//   current() {
+//     return i18n.locale;
+//   },
+// };
