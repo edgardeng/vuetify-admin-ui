@@ -14,12 +14,13 @@
 
 ### Use Npm
 
+* set registry ` npm config set registry https://registry.npm.taobao.org `
+
 * Project setup ` npm install `
 
 * Compiles and hot-reloads for development ` npm run serve `
 
 * Compiles and minifies for production `npm run build`
-
 
 
 ## Reference

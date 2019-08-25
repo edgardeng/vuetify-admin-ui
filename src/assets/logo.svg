@@ -1,18 +1,13 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="250" height="250" xml:space="preserve">
-
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="200" height="200" xml:space="preserve">
 	<g id="svg-content">
-			
-<g id="XMLID_2_">
-	<polygon id="XMLID_994_" fill="#9FD9F6" points="132,19.5 132,19.5 100.5,1.7 15.5,49.6 46.5,67.2"/>
-	<polygon id="XMLID_993_" fill="#9FD9F6" points="154.5,32.2 68.6,79.8 100.4,97.9 185.5,49.6 	"/>
-	<polygon id="XMLID_992_" fill="#00A0E9" points="68.6,79.8 68.5,143.2 46.4,129.6 46.4,67.2 46.5,67.2 15.5,49.6 15.5,150.9 
-		100.5,199.3 100.5,98 	"/>
-	<polygon id="XMLID_843_" fill="#172A88" points="100.5,98 100.5,199.3 131.9,181.2 131.9,181.2 131.9,117.7 154,105.1 154,168.8 
-		185.5,150.9 185.5,49.6 	"/>
-	<polygon id="XMLID_842_" fill="#172A88" points="46.4,129.6 68.5,117.3 68.6,79.8 132,44.7 132,19.5 46.5,67.2 	"/>
-	<polygon id="XMLID_840_" fill="#00A0E9" points="131.9,117.7 154,105.1 154,168.8 131.9,156.4 	"/>
-	<polygon id="XMLID_839_" fill="#9FD9F6" points="68.5,143.2 68.5,117.3 46.4,129.6 	"/>
-</g>
-
+		<g id="logo_g">
+			<polygon id="logo_g_1" fill="#9FD9F6" points="132,19.5 132,19.5 100.5,1.7 15.5,49.6 46.5,67.2"/>
+			<polygon id="logo_g_2" fill="#9FD9F6" points="154.5,32.2 68.6,79.8 100.4,97.9 185.5,49.6 	"/>
+			<polygon id="logo_g_3" fill="#00A0E9" points="68.6,79.8 68.5,143.2 46.4,129.6 46.4,67.2 46.5,67.2 15.5,49.6 15.5,150.9 100.5,199.3 100.5,98 	"/>
+			<polygon id="logo_g_4" fill="#172A88" points="100.5,98 100.5,199.3 131.9,181.2 131.9,181.2 131.9,117.7 154,105.1 154,168.8 185.5,150.9 185.5,49.6"/>
+			<polygon id="logo_g_5" fill="#172A88" points="46.4,129.6 68.5,117.3 68.6,79.8 132,44.7 132,19.5 46.5,67.2 "/>
+			<polygon id="logo_g_6" fill="#00A0E9" points="131.9,117.7 154,105.1 154,168.8 131.9,156.4 "/>
+			<polygon id="logo_g_7" fill="#9FD9F6" points="68.5,143.2 68.5,117.3 46.4,129.6 "/>
+		</g>
 	</g>
 </svg>
