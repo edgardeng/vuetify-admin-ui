@@ -5,6 +5,10 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background: #6190E8;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 
   .logo {
     display: block;
@@ -20,6 +24,17 @@
     }
   }
 }
+
+
+.session__body {
+  display: flex;
+  margin: auto;
+  margin-top: 50px;
+  position: relative;
+  -webkit-box-shadow: 0px 20px 80px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 20px 80px 0px rgba(0,0,0,0.3);
+}
+
 
 
 
@@ -57,9 +72,9 @@
 }
 
 @media (min-width: 768px) and (max-width: 1440px) {
-  .panel-wrapper {
-    padding-left: 50%;
-  }
+  //.panel-wrapper {
+  //  padding-left: 50%;
+  //}
 
   .slogan-wrapper {
     position: absolute;
@@ -81,9 +96,6 @@
   align-items: center;
   height: 100%;
   min-height: 480px;
-  background: #6190E8;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
   .login-con {

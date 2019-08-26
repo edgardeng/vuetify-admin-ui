@@ -1,0 +1,10 @@
+#app {
+  .main-container {
+    min-height: 100%;
+    // height: inherit;
+    width: 100%;
+    position: relative;
+    // margin-left: $sidebar-width;
+    overflow-y: auto;
+  }
+}

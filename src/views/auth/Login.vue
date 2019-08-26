@@ -1,89 +1,86 @@
 <template>
   <div class="panel-wrapper">
-    <span class="logo">
-      <img src="../../assets/logo.svg" alt="">
-    </span>
+    <!--<span class="logo">-->
+      <!--<img src="../../assets/logo.svg" alt="">-->
+    <!--</span>-->
+    <v-container>
 
-    <div class="slogan-wrapper">
-      <div class="slogan">
-        <img src="" alt="">
-      </div>
-    </div>
+      <div class="session__body">
+        <div class="slogan-wrapper" style="width: 500px">
+          <div class="slogan">
+            <img src="" alt="">
+          </div>
+        </div>
 
-    <div class="panel-content">
-      <v-app class="login-con">
-        <!-- <v-spacer></v-spacer> -->
-        <v-content>
+        <div class="form-wrapper" style="width: 500px">
           <base-langbar/>
-          <v-container fluid fill-height >
-            <v-layout align-center justify-center >
-              <v-flex class="frame">
-                <h1 v-if="!isMobile">
-                  {{ $t('common.loginN')}}
-                </h1>
-                <v-form>
-                  <v-text-field
-                    v-model="form.username"
-                    prepend-icon="person"
-                    clearable
-                    :label="$t('common.username')"
-                    @keyup.enter.native="login"
-                    required
-                  ></v-text-field>
-                  <v-text-field
-                    v-model="form.password"
-                    prepend-icon="lock"
-                    @keyup.enter.native="login"
-                    :append-icon="showPwd ? 'visibility_off' : 'visibility'"
-                    :type="showPwd ? 'text' : 'password'"
-                    @click:append="showPwd = !showPwd"
-                    :label="$t('common.password')"
-                    required
-                  ></v-text-field>
-                  <v-layout
-                    column
-                    wrap
-                    justify-end
-                    align-end
-                  >
-                    <v-flex>
-                      <v-btn
-                        flat
-                        small
-                        color="primary"
-                        @click="redirectForgotPassword"
-                      >
-                        {{ $t('common.forgetPassword') }}
-                      </v-btn>
-                    </v-flex>
-                    <v-flex>
-                      <v-btn
-                        :loading="loginLoading"
-                        @click="login"
-                      >
-                        <span slot="loader">Loading...</span>
-                        {{ $t('common.login') }}
-                      </v-btn>
-                    </v-flex>
-                  </v-layout>
-                </v-form>
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </v-content>
 
-        <v-footer
-          color="#fbfbfb"
-          height="auto"
-        >
-          <v-layout>
-            <v-flex text-xs-center>
-              <!-- {{ $t('common.copyrightMessage', { currentYear }) }} -->
-            </v-flex>
-          </v-layout>
-        </v-footer>
-      </v-app>
-    </div>
+
+          <v-row class="frame">
+            <h1 v-if="!isMobile">
+              {{ $t('common.loginN')}}
+            </h1>
+            <v-form>
+              <v-text-field
+                v-model="form.username"
+                prepend-icon="person"
+                clearable
+                :label="$t('common.username')"
+                @keyup.enter.native="login"
+                required
+              ></v-text-field>
+              <v-text-field
+                v-model="form.password"
+                prepend-icon="lock"
+                @keyup.enter.native="login"
+                :append-icon="showPwd ? 'visibility_off' : 'visibility'"
+                :type="showPwd ? 'text' : 'password'"
+                @click:append="showPwd = !showPwd"
+                :label="$t('common.password')"
+                required
+              ></v-text-field>
+              <v-row
+                column
+                wrap
+                justify-end
+                align-end
+              >
+                <v-btn block color="primary" @click="login" :loading="loading">{{$t("common.login")}}</v-btn>
+
+                <v-btn text small color="error" @click="redirectForgotPassword" >
+                    {{ $t('common.forgetPassword') }}
+                </v-btn>
+
+              </v-row>
+            </v-form>
+          </v-row>
+
+          <div class="login-btn">
+            <v-btn icon>
+              <v-icon color="blue">fa fa-facebook-square fa-lg</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon color="red">fa fa-google fa-lg</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon color="light-blue">fa fa-twitter fa-lg</v-icon>
+            </v-btn>
+          </div>
+
+        </div>
+
+      </div>
+
+    </v-container>
+
+    <v-footer color="#fbfbfb" height="auto" >
+      <v-row>
+        <v-col text-xs-center>
+          <!-- {{ $t('common.copyrightMessage', { currentYear }) }} -->
+        </v-col>
+      </v-row>
+    </v-footer>
+
   </div>
 </template>
 
@@ -152,5 +149,30 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../styles/_login.scss';
+/*@import '../../styles/_login.scss';*/
+.panel-wrapper {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #6190E8; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.session__body {
+  width: 1000px;
+  display: flex;
+  margin: auto;
+  margin-top: 50px;
+  position: relative;
+  box-shadow: 0px 20px 80px 0px rgba(0,0,0,0.3);
+  background: white;
+}
+
+.slogan-wrapper{
+  background: linear-gradient(0deg, #3a485a 0%, #607089 100%)
+}
+
 </style>
