@@ -1,25 +1,24 @@
 <template>
   <div class="panel-wrapper">
-    <!--<span class="logo">-->
-      <!--<img src="../../assets/logo.svg" alt="">-->
-    <!--</span>-->
     <v-container>
 
       <div class="session__body">
-        <div class="slogan-wrapper" style="width: 500px">
+        <div class="slogan-wrapper">
           <div class="slogan">
             <img src="" alt="">
           </div>
         </div>
 
-        <div class="form-wrapper" style="width: 500px">
+        <div class="form-wrapper">
+
           <base-langbar/>
 
+          <h1 v-if="!isMobile" class="mt-3 md3">
+            {{ $t('common.loginN')}}
+          </h1>
 
-          <v-row class="frame">
-            <h1 v-if="!isMobile">
-              {{ $t('common.loginN')}}
-            </h1>
+          <v-row class="frame align-center">
+
             <v-form>
               <v-text-field
                 v-model="form.username"
@@ -45,7 +44,7 @@
                 justify-end
                 align-end
               >
-                <v-btn block color="primary" @click="login" :loading="loading">{{$t("common.login")}}</v-btn>
+                <v-btn block color="primary" @click="login" :loading="loginLoading">{{$t("common.login")}}</v-btn>
 
                 <v-btn text small color="error" @click="redirectForgotPassword" >
                     {{ $t('common.forgetPassword') }}
@@ -167,12 +166,24 @@ export default {
   margin: auto;
   margin-top: 50px;
   position: relative;
-  box-shadow: 0px 20px 80px 0px rgba(0,0,0,0.3);
+  border-radius: 4px;
   background: white;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+
 }
 
 .slogan-wrapper{
+  width: 500px;
+  padding: 20px;
   background: linear-gradient(0deg, #3a485a 0%, #607089 100%)
 }
+
+  .form-wrapper {
+    width: 500px;
+    padding: 20px;
+  }
+
+
+
 
 </style>

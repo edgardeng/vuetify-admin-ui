@@ -35,7 +35,7 @@ export default {
 <style lang="scss" scoped>
 .change-lang {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   cursor: pointer;
 
