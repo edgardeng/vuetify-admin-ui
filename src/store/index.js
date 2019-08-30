@@ -1,17 +1,18 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import auth from './modules/auth';
-import users from './modules/users';
-import getters from './getters';
+import user from './modules/user';
+import permission from './modules/permission';
+import app from './modules/app';
 
 Vue.use(Vuex);
 
-const debug = process.env.NODE_ENV !== 'production';
+// const debug = process.env.NODE_ENV !== 'production';
 export default new Vuex.Store({
   modules: {
-    auth,
-    users,
-  },
-  getters,
-  strict: debug,
+    app,
+    permission,
+    user
+  }
+  // getters,
+  // strict: debug,
 });

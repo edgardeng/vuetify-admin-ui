@@ -1,0 +1,44 @@
+{
+  "home": "Home",
+  "system": {
+    "name": "Heisai Face Tool"
+  },
+  "menu": {
+    "home": "Home",
+    "system": "System",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "system_manage": "System Manage",
+    "users": "User",
+    "menus": "Menu",
+    "authorities": "Authority",
+    "notification": "Notification",
+    "users_edit": "Edit",
+    "dark_theme": "Theme Dark"
+  },
+  "form": {
+    "required": "Required",
+    "min_6": "Min 6 characters"
+  },
+  "dialog": {
+    "hint": "Hint",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "text_out": "Are You Sure to Sign Out ?"
+  },
+  "login": {
+    "account": "Account",
+    "password": "Password",
+    "remember": "Remember Me",
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "sign_out": "Sign Out",
+    "no_account": "No Account?"
+  },
+  "toobar": {
+    "search": "Search",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  }
+}

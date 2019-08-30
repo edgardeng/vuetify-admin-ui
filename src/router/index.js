@@ -21,11 +21,9 @@ Vue.use(Router);
 *   hasMulSub: false, // It has multiple children
 * }
 */
-export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  scrollBehavior: () => ({ y: 0 }),
-  routes: [
+
+
+export const constRouters = [
     {
       path: '/login',
       name: 'Login',
@@ -101,5 +99,12 @@ export default new Router({
         hidden: true,
       },
     },
-  ],
+  ]
+
+
+export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  scrollBehavior: () => ({ y: 0 }),
+  routes: constRouters
 });

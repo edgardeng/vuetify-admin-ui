@@ -1,0 +1,43 @@
+{
+  "home": "首页",
+  "system": {
+    "name": "黑塞人脸标注工具"
+  },
+  "menu": {
+    "home": "主页",
+    "system": "系统",
+    "dashboard": "控制面板",
+    "profile": "用户信息",
+    "system_manage": "系统管理",
+    "notification": "系统通知",
+    "users": "用户管理",
+    "menus": "菜单管理",
+    "authorities": "权限管理",
+    "users_edit": "用户编辑",
+    "dark_theme": "深色主题"
+  },
+  "form": {
+    "required": "必填项",
+    "min_6": "最少6位"
+  },
+  "dialog": {
+    "hint": "提示",
+    "cancel": "取消",
+    "confirm": "确定",
+    "text_out": "您确认退出吗?"
+  },
+  "login": {
+    "account": "账号",
+    "password": "密码",
+    "remember": "记住密码",
+    "signin": "登录",
+    "signup": "注册",
+    "sign_out": "退出",
+    "no_account": "没有账号?"
+  },
+  "toobar": {
+    "search": "搜索",
+    "profile": "资料",
+    "settings": "设置"
+  }
+}

@@ -8,6 +8,7 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import API from './api';
+
 import * as consts from './utils/consts';
 import './utils/compatible-ie';
 import i18n from './i18n';
@@ -20,22 +21,24 @@ import { parseURL } from './utils/util';
 import VBasicCard from './components/VBasicCard.vue';
 
 import "roboto-fontface/css/roboto/roboto-fontface.css"
-import 'material-design-icons-iconfont/dist/material-design-icons.css';
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+import Snackbar from "./components/message"
 
-const that = Vue.prototype;
-console.log(that);
-that.$locale = {
-  use(lang) {
-    i18n.locale = lang;
-    // that.$vuetify.lang.current = lang === 'zh-CN' ? 'zhLang' : 'enLang';
-    localStorage.setItem('VUE-ADMIN-VUETIFY_LANGUAGE', lang);
-  },
-  current() {
-    return i18n.locale;
-  },
-};
+// const that = Vue.prototype;
+// console.log(that);
+// that.$locale = {
+//   use(lang) {
+//     i18n.locale = lang;
+//     // that.$vuetify.lang.current = lang === 'zh-CN' ? 'zhLang' : 'enLang';
+//     localStorage.setItem('VUE-ADMIN-VUETIFY_LANGUAGE', lang);
+//   },
+//   current() {
+//     return i18n.locale;
+//   },
+// };
 
 
+Vue.prototype.$message = Snackbar;
 Vue.component('v-basic-card', VBasicCard);
 
 NProgress.configure({
@@ -98,27 +101,29 @@ Vue.router.beforeEach((to, from, next) => {
     }
   }
 });
-Vue.router.beforeEach((to, from, next) => {
-  const { locale } = to.query;
 
-  if (locale) {
-    /* eslint-disable no-param-reassign */
-    delete to.query.locale;
-    if (supportedLangs.includes(locale)) {
-      i18n.locale = locale;
-      localStorage.setItem('VUE-ADMIN-VUETIFY_LANGUAGE', locale);
-    }
-  }
+// Vue.router.beforeEach((to, from, next) => {
+//   const { locale } = to.query;
+//
+//   if (locale) {
+//     /* eslint-disable no-param-reassign */
+//     delete to.query.locale;
+//     if (supportedLangs.includes(locale)) {
+//       i18n.locale = locale;
+//       localStorage.setItem('VUE-ADMIN-VUETIFY_LANGUAGE', locale);
+//     }
+//   }
+//
+//   next();
+// });
 
-  next();
-});
 Vue.router.afterEach(() => {
   NProgress.done();
 });
 
-i18n.locale = localStorage.getItem('VUE-ADMIN-VUETIFY_LANGUAGE')
-  || (supportedLangs.includes(userLocale) ? userLocale : 'zh-CN');
-Vue.prototype.$locale.use(i18n.locale);
+// i18n.locale = localStorage.getItem('VUE-ADMIN-VUETIFY_LANGUAGE')
+//   || (supportedLangs.includes(userLocale) ? userLocale : 'zh-CN');
+// Vue.prototype.$locale.use(i18n.locale);
 
 Vue.config.productionTip = false;
 

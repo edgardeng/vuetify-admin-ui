@@ -1,91 +1,69 @@
 <template>
-  <div class="panel-wrapper">
-    <v-container>
-
-      <div class="session__body">
-        <div class="slogan-wrapper">
-          <div class="slogan">
-            <img src="" alt="">
+  <v-app id="app-inspire">
+    <v-content class="app-login-wrapper">
+      <v-container>
+        <div class="login-content">
+          <div class="login-slogan-wrapper">
+            <div class="slogan">
+              <img src="" alt="">
+            </div>
+            <h3> Vuetify Admin UI</h3>
+            <p> Frontend Admin UI Based on Vue2 and Boostrap 4 with vuetify  </p>
           </div>
-        </div>
+          <div class="login-form-wrapper">
 
-        <div class="form-wrapper">
+            <base-langbar/>
 
-          <base-langbar/>
-
-          <h1 v-if="!isMobile" class="mt-3 md3">
-            {{ $t('common.loginN')}}
-          </h1>
-
-          <v-row class="frame align-center">
-
-            <v-form>
+            <v-form v-model="formValid"  ref="form" lazy-validation>
               <v-text-field
-                v-model="form.username"
-                prepend-icon="person"
-                clearable
-                :label="$t('common.username')"
-                @keyup.enter.native="login"
-                required
-              ></v-text-field>
+                :label="$t('login.account')"
+                v-model="username"
+                :rules="[rules.required]"
+                prepend-icon="material-icons account_circle"
+                type="text" >
+              </v-text-field>
+
               <v-text-field
-                v-model="form.password"
-                prepend-icon="lock"
-                @keyup.enter.native="login"
-                :append-icon="showPwd ? 'visibility_off' : 'visibility'"
-                :type="showPwd ? 'text' : 'password'"
-                @click:append="showPwd = !showPwd"
-                :label="$t('common.password')"
-                required
-              ></v-text-field>
-              <v-row
-                column
-                wrap
-                justify-end
-                align-end
-              >
-                <v-btn block color="primary" @click="login" :loading="loginLoading">{{$t("common.login")}}</v-btn>
+                v-model="password"
+                :label="$t('login.password')"
+                prepend-icon="material-icons lock"
+                :rules="[rules.required, rules.min]"
+                :append-icon="showPwd ? 'mdi-eye' : 'mdi-eye-off'"
+                :type="showPwd? 'text' : 'password'"
+                @click:append="showPwd = !showPwd">
+              </v-text-field>
 
-                <v-btn text small color="error" @click="redirectForgotPassword" >
-                    {{ $t('common.forgetPassword') }}
-                </v-btn>
-
-              </v-row>
+              <v-checkbox v-model="remember" :label="$t('login.remember')" > </v-checkbox>
+              <v-btn rounded block color="primary" :loading="loading" :disabled="!formValid" @click="handleSignIn">{{$t('login.signin')}}</v-btn>
+              <div class="text-center pb-8 pt-4">
+                <v-btn text color="purple" class="pl-0 pr-0" @click="handelSignChange"> <span class="grey--text">{{$t('login.no_account')}} </span> {{$t('login.signup')}} </v-btn>
+              </div>
             </v-form>
-          </v-row>
 
-          <div class="login-btn">
-            <v-btn icon>
-              <v-icon color="blue">fa fa-facebook-square fa-lg</v-icon>
-            </v-btn>
-            <v-btn icon>
-              <v-icon color="red">fa fa-google fa-lg</v-icon>
-            </v-btn>
-            <v-btn icon>
-              <v-icon color="light-blue">fa fa-twitter fa-lg</v-icon>
-            </v-btn>
+            <div class="login-btn">
+              <v-btn icon>
+                <v-icon color="blue">fa fa-facebook-square fa-lg</v-icon>
+              </v-btn>
+              <v-btn icon>
+                <v-icon color="red">fa fa-google fa-lg</v-icon>
+              </v-btn>
+              <v-btn icon>
+                <v-icon color="light-blue">fa fa-twitter fa-lg</v-icon>
+              </v-btn>
+            </div>
+
           </div>
-
         </div>
 
-      </div>
+      </v-container>
 
-    </v-container>
-
-    <v-footer color="#fbfbfb" height="auto" >
-      <v-row>
-        <v-col text-xs-center>
-          <!-- {{ $t('common.copyrightMessage', { currentYear }) }} -->
-        </v-col>
-      </v-row>
-    </v-footer>
-
-  </div>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import { isMobile } from '@/utils/util';
 import BaseLangbar from '@/components/widgets/BaseLangbar.vue';
+import { mapActions } from 'vuex'
 
 export default {
   name: 'Login',
@@ -94,21 +72,62 @@ export default {
   },
   data() {
     return {
-      currentYear: new Date().getFullYear(),
+      formValid: true,
+      username: 'admin',
+      password: '123456',
+      remember: false,
       showPwd: false,
-      form: {
-        username: 'admin',
-        password: 'admin123',
+      loading: false,
+      rules: {
+        required: value => !!value || this.$t('form.required'),
+        min: v => !!v && (v.length >= 6) || this.$t('form.min_6')
       },
-      loginLoading: false,
+      currentYear: new Date().getFullYear()
     };
   },
   computed: {
-    isMobile() {
-      return isMobile();
-    },
   },
   methods: {
+    ...mapActions([
+      'USER_LOGIN'
+    ]),
+    handleSignIn () {
+      if (!this.$refs.form.validate()) {
+        return
+      }
+      this.loading = true
+      let data = {
+        username: this.username,
+        password: this.password
+      }
+      this.USER_LOGIN(data).then(response => {
+        if (response) {
+          let redirect = this.$route.query.redirect
+          if (!redirect) {
+            redirect = '/'
+          }
+          this.$router.push(redirect)
+        }
+        // if (this.remember) {
+        //   setObject('remember', rememberObj)
+        // } else {
+        //   setObject('remember', null)
+        // }
+        this.loading = false
+      }).catch(error => {
+        this.$message.error(error)
+        this.loading = false
+      })
+
+
+
+    },
+    handelSignChange () {
+
+    },
+    handleSignUp () {
+      console.log('Register', this.username, this.password)
+    },
     login() {
       if (!this.form.password || !this.form.username) {
         return;
@@ -148,8 +167,9 @@ export default {
 </script>
 
 <style lang="scss">
+
 /*@import '../../styles/_login.scss';*/
-.panel-wrapper {
+.app-login-wrapper {
   width: 100%;
   height: 100%;
   display: block;
@@ -160,11 +180,13 @@ export default {
   background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.session__body {
-  width: 1000px;
+
+.login-content {
+  width: 80%;
+  max-width: 1000px;
   display: flex;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 100px;
   position: relative;
   border-radius: 4px;
   background: white;
@@ -172,18 +194,27 @@ export default {
 
 }
 
-.slogan-wrapper{
-  width: 500px;
+.login-slogan-wrapper {
+  width: 50%;
+  max-width: 500px;
   padding: 20px;
   background: linear-gradient(0deg, #3a485a 0%, #607089 100%)
 }
 
-  .form-wrapper {
-    width: 500px;
+  .login-form-wrapper {
+    width: 50%;
+    max-width: 500px;
     padding: 20px;
   }
 
-
+@media (max-width: 768px) {
+  .login-slogan-wrapper {
+    display: none;
+  }
+  .login-form-wrapper {
+    width: 100%;
+  }
+}
 
 
 </style>
