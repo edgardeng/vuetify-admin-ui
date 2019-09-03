@@ -1,181 +1,40 @@
 import Vue from 'vue';
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
+import Vuetify from 'vuetify/lib';
+// import i18n from '../i18n'
 
-
-
-//
-// import Vuetify, {
-//   // Vuetify,
-//   VContent,
-//   VContainer,
-//   VApp,
-//   VAlert,
-//   VAutocomplete,
-//   VAvatar,
-//   VBadge,
-//   VBreadcrumbs,
-//   VBtn,
-//   VRow,
-//   VBottomNavigation,
-//   VFlex,
-//   // VBottomNav,
-//   VBtnToggle,
-//   VCard,
-//   VCardText,
-//   VCardTitle,
-//   VToolbarTitle,
-//   VFabTransition,
-//   VListItemTitle,
-//   VListItemAction,
-//   VListItemGroup,
-//   VCheckbox,
-//   VCombobox,
-//   VDataTable,
-//   VDataIterator,
-//   VDatePicker,
-//   VDialog,
-//   VDivider,
-//   VExpansionPanel,
-//   VFooter,
-//   VForm,
-//   VLayout,
-//   // VGrid,
-//   VIcon,
-//   VImg,
-//   VInput,
-//   VLabel,
-//   VList,
-//   VMenu,
-//   VMessages,
-//   VNavigationDrawer,
-//   VOverflowBtn,
-//   VPagination,
-//   VProgressCircular,
-//   VProgressLinear,
-//   VRadioGroup,
-//   VRangeSlider,
-//   VSelect,
-//   VSlider,
-//   VSnackbar,
-//   VSpeedDial,
-//   VStepper,
-//   VSubheader,
-//   VSwitch,
-//   VSystemBar,
-//   VTabs,
-//   VTextField,
-//   VTextarea,
-//   VTimePicker,
-//   VToolbar,
-//   VTooltip,
-//   // transitions,
-// } from 'vuetify/lib';
-
-// import * as directives from 'vuetify/lib/directives';
-import enLang from 'vuetify/es5/locale/en';
-import zhLang from 'vuetify/es5/locale/zh-Hans';
-import Snackbar from '../components/snackbar/index';
-
-// Vue.use(Vuetify, {
-//   components: {
-//     VApp,
-//     VContent,
-//     VContainer,
-//     VAlert,
-//     VAutocomplete,
-//     VAvatar,
-//     VBadge,
-//     VBreadcrumbs,
-//     VBtn,
-//     VRow,
-//     VFlex,
-//     VBottomNavigation,
-//     VBtnToggle,
-//     VCard,
-//     VCheckbox,
-//     VCombobox,
-//     VDataTable,
-//     VDataIterator,
-//     VDatePicker,
-//     VDialog,
-//     VDivider,
-//     VExpansionPanel,
-//     VFooter,
-//     VForm,
-//     VLayout,
-//     VCardText,
-//     VCardTitle,
-//     VToolbarTitle,
-//     VFabTransition,
-//     VListItemTitle,
-//     VListItemAction,
-//     VListItemGroup,
-//     // VGrid,
-//     VIcon,
-//     VImg,
-//     VInput,
-//     VLabel,
-//     VList,
-//     VMenu,
-//     VMessages,
-//     VNavigationDrawer,
-//     VOverflowBtn,
-//     VPagination,
-//     VProgressCircular,
-//     VProgressLinear,
-//     VRadioGroup,
-//     VRangeSlider,
-//     VSelect,
-//     VSlider,
-//     VSnackbar,
-//     VSpeedDial,
-//     VStepper,
-//     VSubheader,
-//     VSwitch,
-//     VSystemBar,
-//     VTabs,
-//     VTextField,
-//     VTextarea,
-//     VTimePicker,
-//     VToolbar,
-//     VTooltip,
-//     // transitions,
-//   },
-//   directives
-// });
-Vue.use(Vuetify)
-
-Vue.prototype.$message = Snackbar;
+Vue.use(Vuetify);
 
 export default new Vuetify({
   theme: {
-    primary: "#ee44aa",
-    secondary: "#424242",
-    accent: "#82B1FF",
-    error: "#FF5252",
-    info: "#2196F3",
-    success: "#4CAF50",
-    warning: "#FFC107"
+    options: {
+      customProperties: true,
+    },
+    themes: {
+      light: {
+        primary: '#1976D2',
+        secondary: '#424242',
+        accent: '#82B1FF',
+        error: '#FF5252',
+        info: '#2196F3',
+        success: '#4CAF50',
+        warning: '#FFC107',
+      },
+      dark: {
+        primary: '#1890FF',
+        secondary: '#1F3070',
+        accent: '#5267B3',
+        error: '#FF6370',
+        info: '#6DDCB5',
+        success: '#2baf59',
+        warning: '#FFC107',
+      }
+    },
   },
-  customProperties: true,
+  icons: {
+    iconfont: 'mdi',
+  },
   lang: {
-    locales: { enLang, zhLang },
-    current: 'enLang',
-  },
-})
-
-// Vue.prototype.$vuetify = vuefity
-//
-// const that = Vue.prototype;
-// console.log(that);
-// that.$locale = {
-//   use(lang) {
-//     i18n.locale = lang;
-//     that.$vuetify.lang.current = lang === 'zh-CN' ? 'zhLang' : 'enLang';
-//     localStorage.setItem('VUE-ADMIN-VUETIFY_LANGUAGE', lang);
-//   },
-//   current() {
-//     return i18n.locale;
-//   },
-// };
+    // t: (key, ...params) => i18n.t(key, params),
+    current: 'zhHans'
+  }
+});

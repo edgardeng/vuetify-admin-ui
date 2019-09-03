@@ -20,7 +20,7 @@ module.exports = {
     host: '0.0.0.0',
     port: 8090,
     https: false,
-    open: false,
+    open: true,
   },
   lintOnSave: process.env.NODE_ENV !== 'production',
   css: {

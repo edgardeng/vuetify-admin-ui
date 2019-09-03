@@ -1,6 +1,6 @@
 <template>
   <header>
-    <v-toolbar
+    <v-app-bar
       class="primary"
       app
       dark
@@ -27,7 +27,7 @@
       <!-- menu -->
       <navbar-menu />
 
-      <v-spacer></v-spacer>
+      <v-spacer> </v-spacer>
 
       <v-toolbar-items>
         <v-menu
@@ -138,7 +138,7 @@
         </v-menu>
         <base-langbar v-if="$vuetify && $vuetify.breakpoint.smAndUp" />
       </v-toolbar-items>
-    </v-toolbar>
+    </v-app-bar>
   </header>
 </template>
 

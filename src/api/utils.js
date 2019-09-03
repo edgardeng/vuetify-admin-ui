@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Axios from 'axios';
-import Snackbar from '../components/snackbar/index';
+import Snackbar from '../components/message/index';
 
 Vue.prototype.$http = Axios;
 

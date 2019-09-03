@@ -1,7 +1,8 @@
 {
   "home": "首页",
   "system": {
-    "name": "黑塞人脸标注工具"
+    "name": "Vuetify后台系统",
+    "desc": "基于Vue2框架和Vuetify组件开发的后台管理系统前端界面"
   },
   "menu": {
     "home": "主页",

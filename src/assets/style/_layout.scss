@@ -1,0 +1,65 @@
+/**
+此处 layout 主页面的基本样式。
+class命名方式统一采用 app- 开头
+*/
+
+$font-size-root: 18px;
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.app-content-wrapper {
+  min-height: calc(100vh - 64px);
+}
+
+
+/** Light Theme */
+
+.theme--light.v-application {
+  background: #f0eef0;
+}
+
+.theme--light.v-app-bar {
+  background: #CFD8DC;
+}
+
+.theme--light.v-toolbar {
+  background: #CFD8DC;
+}
+
+/** Dark Theme */
+
+.theme--dark.v-sheet , .theme--dark.v-navigation-drawer, .theme--dark.v-data-table{
+  background: #0b1a4c;
+}
+
+.theme--dark.v-application {
+  background: #09153d;
+}
+
+.theme--dark.v-card{
+  border: 1px solid #14399c;
+  border-radius: 4px;
+  box-shadow: 0.1rem 0.1rem 0.5rem rgba(149, 163, 247, 0.2);
+}
+
+
+
+.theme--dark.v-data-table{
+  tbody {
+    tr:hover{
+      background: #5267B3;
+    }
+  }
+}
+
+/* main view in layout */
+.app-view-content {
+
+}

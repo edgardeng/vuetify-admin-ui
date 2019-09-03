@@ -7,12 +7,15 @@
             <div class="slogan">
               <img src="" alt="">
             </div>
-            <h3> Vuetify Admin UI</h3>
-            <p> Frontend Admin UI Based on Vue2 and Boostrap 4 with vuetify  </p>
+            <h2> {{$t('system.name')}} </h2>
+            <p> {{$t('system.desc')}} </p>
           </div>
           <div class="login-form-wrapper">
 
-            <base-langbar/>
+            <div style="text-align: right">
+              <v-select style="width: 95px" v-model="lang" :items="langs" menu-props="auto" prepend-icon="earth" single-line ></v-select>
+            </div>
+
 
             <v-form v-model="formValid"  ref="form" lazy-validation>
               <v-text-field
@@ -62,16 +65,15 @@
 </template>
 
 <script>
-import BaseLangbar from '@/components/widgets/BaseLangbar.vue';
+
 import { mapActions } from 'vuex'
 
 export default {
   name: 'Login',
-  components: {
-    BaseLangbar,
-  },
   data() {
     return {
+      lang: '中文',
+      langs: ['中文', 'English'],
       formValid: true,
       username: 'admin',
       password: '123456',
@@ -118,9 +120,6 @@ export default {
         this.$message.error(error)
         this.loading = false
       })
-
-
-
     },
     handelSignChange () {
 

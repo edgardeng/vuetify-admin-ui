@@ -1,7 +1,14 @@
 {
   "home": "Home",
   "system": {
-    "name": "Heisai Face Tool"
+    "name": "Vuetify Admin",
+    "desc": "Frontend Admin UI Based on Vue2 and Boostrap 4 with vuetify"
+  },
+  "common": {
+    "save": "Save",
+    "query": "Query",
+    "reset": "Reset",
+    "filter":"Filter"
   },
   "menu": {
     "home": "Home",

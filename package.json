@@ -2,7 +2,6 @@
   "name": "vuetify-admin-ui",
   "version": "0.1.0",
   "description": "Frontend Admin UI Based on Vue2 and Boostrap 4 with vuetify",
-  "main": "index.js",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -12,7 +11,6 @@
   },
   "keywords": [
     "vue",
-    "vue-basis",
     "vue-admin",
     "vuetify",
     "admin"
@@ -26,10 +24,10 @@
     "url": "https://github.com/edgardeng/vuetify-admin-ui/issues"
   },
   "homepage": "https://github.com/edgardeng/vuetify-admin-ui",
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
+    "@mdi/font": "^3.6.95",
+    "core-js": "^2.6.5",
+    "roboto-fontface": "^0.10.0",
     "@babel/polyfill": "^7.4.4",
     "@tinymce/tinymce-vue": "^2.1.0",
     "axios": "^0.19.0",
@@ -44,9 +42,9 @@
     "mockjs": "^1.0.1-beta3",
     "moment": "^2.24.0",
     "nprogress": "^0.2.0",
+    "vue-perfect-scrollbar": "^0.1.0",
+    "vue-i18n": "^8.11.2",
     "perfect-scrollbar": "^1.4.0",
-    "roboto-fontface": "^0.10.0",
-    "screenfull": "^4.2.0",
     "sortablejs": "^1.9.0",
     "tinymce": "^5.0.8",
     "vconsole": "^3.3.0",
@@ -54,32 +52,47 @@
     "vue-baidu-map": "^0.21.21",
     "vue-color": "^2.7.0",
     "vue-echarts": "^4.0.3",
-    "vue-i18n": "^8.11.2",
     "vue-router": "^3.0.6",
     "vuedraggable": "^2.21.0",
     "vuetify": "^2.0.10",
-    "vuex": "^3.1.1",
-    "js-cookie": "2.2.0"
+    "vuex": "^3.1.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
     "@vue/eslint-config-airbnb": "^4.0.0",
-    "babel-eslint": "^10.0.2",
-    "babel-plugin-transform-imports": "^1.5.1",
-    "deepmerge": "^4.0.0",
-    "fibers": "^4.0.1",
-    "node-sass": "^4.9.0",
-    "sass": "^1.22.10",
-    "sass-loader": "^7.3.1",
-    "script-loader": "^0.7.2",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
-    "svg-sprite-loader": "^4.1.6",
-    "svgo": "^1.2.2",
-    "svgo-loader": "^2.2.1",
-    "vue-cli-plugin-basis": "^0.9.0",
-    "vue-template-compiler": "^2.6.10"
-  }
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "sass": "^1.17.4",
+    "sass-loader": "^7.1.0",
+    "vue-cli-plugin-vuetify": "^0.6.3",
+    "vue-template-compiler": "^2.6.10",
+    "vuetify-loader": "^1.2.2",
+    "js-cookie": "2.2.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
