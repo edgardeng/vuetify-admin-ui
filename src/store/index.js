@@ -13,6 +13,4 @@ export default new Vuex.Store({
     permission,
     user
   }
-  // getters,
-  // strict: debug,
 });

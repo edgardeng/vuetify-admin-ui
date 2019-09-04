@@ -1,5 +1,6 @@
-import Vue from 'vue';
-import Vuetify from 'vuetify/lib';
+import Vue from 'vue'
+// import Vuetify from 'vuetify/lib'; // without cdn
+import Vuetify from 'vuetify' // use externals when cdn
 // import i18n from '../i18n'
 
 Vue.use(Vuetify);

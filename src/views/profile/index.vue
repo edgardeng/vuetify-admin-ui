@@ -1,7 +1,6 @@
-<!-- Created by dengxixi on 2018/4/11. -->
 <template>
 
-  <div class="hs-view-page">
+  <div class=".app-view-content">
 
     <v-card class="ml-4 mr-4" :elevation="4">
       <v-toolbar color="transparent" flat dense class="pt-2 pb-2">
@@ -138,28 +137,13 @@
 </script>
 
 <style scoped  rel="stylesheet/scss" lang="scss" >
-
-  .profile_img {
-    display: block;
-    max-width: 180px;
-    max-height: 180px;
-    margin: 10px;
-  }
-
-  .profile_img img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-image: inherit;
-  }
-
   .list-user-data {
     margin-left: -40px;
   }
 
   .list-user-data li {
     margin: 10px 0;
+    min-height: 32px;
     list-style-type:none;
   }
 

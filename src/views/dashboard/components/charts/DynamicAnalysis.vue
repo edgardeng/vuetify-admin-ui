@@ -3,8 +3,7 @@
     <v-chart
       style="width:100%;"
       :options="chartOption"
-      autoresize
-    />
+      autoresize />
   </v-card>
 </template>
 

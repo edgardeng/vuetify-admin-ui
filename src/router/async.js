@@ -1,5 +1,6 @@
+import widgets from './modules/widgets'
 
 export const asyncRouters = [
-  { path: '*', redirect: '/404', hidden: true
-  }
+  widgets,
+  { path: '*', redirect: '/404', hidden: true }
 ]

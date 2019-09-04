@@ -15,7 +15,11 @@
     "menus": "菜单管理",
     "authorities": "权限管理",
     "users_edit": "用户编辑",
-    "dark_theme": "深色主题"
+    "dark_theme": "深色主题",
+    "widget": "UI控件",
+    "icon": "图标",
+    "alert": "提示框",
+    "avatar": "头像"
   },
   "view": {
     "update_pwd": "修改密码",

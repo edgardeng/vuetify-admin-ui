@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import ClipboardJS from 'clipboard';
 
-function handleClipboard(target, text) {
+function handleClipboard (target, text) {
   if (!ClipboardJS.isSupported()) {
     Vue.prototype.$message({
       text: 'The current browser does not support copying',

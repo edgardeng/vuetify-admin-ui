@@ -13,9 +13,7 @@
       <span>{{ config.count }}</span>
     </v-card-text>
     <v-card-title class="stats-title">
-      <v-flex>
         {{ config.title }}
-      </v-flex>
     </v-card-title>
   </v-card>
 </template>

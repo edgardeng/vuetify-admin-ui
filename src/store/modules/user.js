@@ -11,7 +11,7 @@ const user = {
     // code: '',
     // token: undefined,
     // roles: [],
-    authorities: undefined, // 用户的授权 ["authority": ] // 用户所有的授权
+    authorities: undefined, // dict: [{'auth':true}]
     // menus: undefined, // 用户的可用菜单 menus[code]= true
     // elements: undefined,  // 用户可用的UI元素(菜单，按钮) elements[code]= true
     // permissionMenus: undefined, // 显示给用户看的UI菜单
@@ -34,6 +34,7 @@ const user = {
     //   state.menus = menus
     // },
     SET_AUTHORITIES: (state, data) => {
+      console.log('SET_AUTHORITIES', data)
       state.authorities = data
     },
     SET_USER: (state, user) => {
@@ -69,7 +70,7 @@ const user = {
           let authorities = {}
           for (let i = 0; i < authList.length; i++) {
             let item = authList[i]
-            authorities[item.authority] = true
+            authorities[item] = true
           }
           commit('SET_AUTHORITIES', authorities)  // key = true
           resolve(authorities)
@@ -93,13 +94,7 @@ const user = {
   },
   getters: {
     userInfo: state => state.user,
-    authorities: state => state.authorities,
-    // userMenus (state) { // menu authority {}
-    //   return state.menus
-    // },
-    // userElements (state) {
-    //   return state.elements // authority list[auth]=true
-    // }
+    authorities: state => state.authorities
   }
 }
 

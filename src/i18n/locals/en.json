@@ -26,7 +26,11 @@
     "authorities": "Authority",
     "notification": "Notification",
     "users_edit": "Edit",
-    "dark_theme": "Theme Dark"
+    "dark_theme": "Theme Dark",
+    "widget": "Widget",
+    "icon": "Icon",
+    "alert": "Alert",
+    "avatar": "Avatar"
   },
   "form": {
     "required": "Required",
