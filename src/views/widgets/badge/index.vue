@@ -135,12 +135,12 @@
 </template>
 
 <script>
-export default {
-  name: 'VBadges',
-  data() {
-    return {
-      show: true,
-    };
-  },
-};
+  export default {
+    name: 'VBadges',
+    data() {
+      return {
+        show: true,
+      };
+    },
+  };
 </script>
