@@ -17,6 +17,11 @@
     "users_edit": "用户编辑",
     "dark_theme": "深色主题"
   },
+  "view": {
+    "update_pwd": "修改密码",
+    "add_user": "添加用户",
+    "edit_user": "编辑用户"
+  },
   "form": {
     "required": "必填项",
     "min_6": "最少6位"

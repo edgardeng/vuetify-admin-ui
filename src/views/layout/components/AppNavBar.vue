@@ -116,7 +116,6 @@ export default {
     this.isDark = this.theme === 'dark'
     this.$vuetify.theme.dark = this.isDark
     this.$vuetify.lang.current = 'zhHans'
-
   },
   watch: {
     langEn (newV, oldV) {
@@ -132,7 +131,7 @@ export default {
   },
   methods: {
     ...mapActions([
-      'CHANGE_THEME', 'CHANGE_LANGUAGE'
+      'CHANGE_THEME', 'CHANGE_LANGUAGE', 'USER_LOGOUT'
     ]),
     handleFullScreen() {
       this.$message.error('你好.....')
@@ -142,7 +141,9 @@ export default {
       this.dialog = true
     },
     handleSignOut() {
-      window.location.href = '/#/login'
+      this.USER_LOGOUT().then(info => {
+        window.location.href = '/#/login'
+      })
     },
     handleChangeTheme () {
       this.isDark = !this.isDark

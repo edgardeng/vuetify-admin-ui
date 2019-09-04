@@ -25,8 +25,8 @@
               <v-icon> mdi-face-profile</v-icon> {{profile.username}}
             </li>
             <li>
-              <v-icon>{{profile.gender ==1 ? 'mdi-gender-male' : 'mdi-gender-female'}}</v-icon>
-              {{profile.gender == 1 ? '男':'女'}}
+              <v-icon>{{profile.gender ==0 ? 'mdi-gender-male' : 'mdi-gender-female'}}</v-icon>
+              {{profile.gender == 0 ? '男':'女'}}
             </li>
             <li>
               <v-icon>mdi-email</v-icon>{{profile.email}}
@@ -95,7 +95,8 @@
           phone: '********',
           email: 'http://edgardeng.github.io',
           address: 'Shanghai',
-          createdAt: '2019-09-01'
+          createdAt: '2019-09-01',
+          gender: 0
         },
         host: undefined,
         rules: [

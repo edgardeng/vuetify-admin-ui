@@ -22,27 +22,13 @@ router.beforeEach((to, from, next) => {
   store.commit('SET_LOADING', true)
   let menus = store.getters.authorities
   if (!menus) { // 判断当前用户是否已拉取完user_info信息
-    // get user's info and menus
-    // console.log('no authorities')
-    store.dispatch('USER_INFO').then(info => { // 拉取user_info
+    store.dispatch('USER_INFO').then(info => { // 拉取user_info 获取 authorities
       let auth = store.getters.authorities
-      // if (!auth) {
-      //   if (to.path === '/login') {
-      //     next()
-      //   } else {
-      //     next({
-      //       path: '/login',
-      //       query: { redirect: to.fullPath }
-      //     })
-      //   }
-      //   console.log(' no auth ')
-      //   return
-      // }
-      console.log('get store authorities: ', auth)
       store.dispatch('GENERATE_ASYNC_ROUTES', auth).then(info => {
         let add = store.getters.addedRouters
         if (add) {
           router.addRoutes(add) // 动态添加 可访问的路由表
+          console.log('router add routes')
         }
       })
       if (to.path === '/login') {
@@ -51,8 +37,6 @@ router.beforeEach((to, from, next) => {
         next()
       }
     }).catch(error => {
-      // console.log('main js USER_INFO catch error')
-      console.log(error)
       if (to.path !== '/login') {
         next({
           path: '/login',

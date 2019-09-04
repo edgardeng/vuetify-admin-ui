@@ -3,33 +3,28 @@
     <v-content class="app-login-wrapper">
       <v-container>
         <div class="login-content">
-          <div class="login-slogan-wrapper">
-            <div class="slogan">
-              <img src="" alt="">
+          <div class="login-slogan-wrapper ">
+            <div class="text-center">
+              <img src="../../assets/logo.svg" style="width: 160px;height: 160px; margin: 40px">
             </div>
-            <h2> {{$t('system.name')}} </h2>
-            <p> {{$t('system.desc')}} </p>
+            <h2 class="pa-2 blue--text text--lighten-5"> {{$t('system.name')}} </h2>
+            <p class="pa-2 indigo--text text--lighten-4"> {{$t('system.desc')}} </p>
           </div>
           <div class="login-form-wrapper">
 
-            <div style="text-align: right">
-              <v-select style="width: 95px" v-model="lang" :items="langs" menu-props="auto" prepend-icon="earth" single-line ></v-select>
-            </div>
-
-
-            <v-form v-model="formValid"  ref="form" lazy-validation>
+            <v-form v-model="formValid"  ref="form" lazy-validation class="mt-6">
               <v-text-field
                 :label="$t('login.account')"
                 v-model="username"
                 :rules="[rules.required]"
-                prepend-icon="material-icons account_circle"
+                prepend-icon="mdi-account-circle"
                 type="text" >
               </v-text-field>
 
               <v-text-field
                 v-model="password"
                 :label="$t('login.password')"
-                prepend-icon="material-icons lock"
+                prepend-icon="mdi-lock"
                 :rules="[rules.required, rules.min]"
                 :append-icon="showPwd ? 'mdi-eye' : 'mdi-eye-off'"
                 :type="showPwd? 'text' : 'password'"
@@ -38,42 +33,42 @@
 
               <v-checkbox v-model="remember" :label="$t('login.remember')" > </v-checkbox>
               <v-btn rounded block color="primary" :loading="loading" :disabled="!formValid" @click="handleSignIn">{{$t('login.signin')}}</v-btn>
-              <div class="text-center pb-8 pt-4">
+              <div class="text-center pb-4 pt-4">
                 <v-btn text color="purple" class="pl-0 pr-0" @click="handelSignChange"> <span class="grey--text">{{$t('login.no_account')}} </span> {{$t('login.signup')}} </v-btn>
               </div>
             </v-form>
-
-            <div class="login-btn">
-              <v-btn icon>
-                <v-icon color="blue">fa fa-facebook-square fa-lg</v-icon>
+            <div class="text-center pb-12 mb-12">
+              <v-btn fab dark small color="indigo darken-2" class="mr-3">
+                <v-icon dark>mdi-facebook</v-icon>
               </v-btn>
-              <v-btn icon>
-                <v-icon color="red">fa fa-google fa-lg</v-icon>
+              <v-btn fab dark small color="blue lighten-1" class="mr-3">
+                <v-icon dark>mdi-twitter</v-icon>
               </v-btn>
-              <v-btn icon>
-                <v-icon color="light-blue">fa fa-twitter fa-lg</v-icon>
+              <v-btn fab dark small color="green darken-1" class="mr-3">
+                <v-icon dark>mdi-wechat</v-icon>
+              </v-btn>
+              <v-btn fab dark small color="red darken-1">
+                <v-icon dark>mdi-sina-weibo</v-icon>
               </v-btn>
             </div>
-
+            <v-select style="width: 98px;position: absolute;right:15px;bottom:5px" class="pa-0 ma-0" v-model="lang" :items="languages" menu-props="auto" prepend-icon="mdi-earth" ></v-select>
           </div>
         </div>
-
       </v-container>
-
     </v-content>
+    <div style="position: absolute; bottom: 10px; width: 100%;" class="pa-2 indigo--text text--lighten-4 text-center"> {{currentYear}} Designed By <a href="https://edgardeng.github.io" target="_self"> edgardeng</a></div>
   </v-app>
 </template>
 
 <script>
 
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Login',
   data() {
     return {
-      lang: '中文',
-      langs: ['中文', 'English'],
+      languages: [{text: '中文', value:'zh'},{text: 'English', value:'en'} ],
       formValid: true,
       username: 'admin',
       password: '123456',
@@ -84,14 +79,28 @@ export default {
         required: value => !!value || this.$t('form.required'),
         min: v => !!v && (v.length >= 6) || this.$t('form.min_6')
       },
-      currentYear: new Date().getFullYear()
+      currentYear: new Date().getFullYear(),
+      lang: undefined
     };
   },
   computed: {
+    ...mapGetters({
+      language: 'language'
+    })
+  },
+  mounted () {
+    this.lang = this.language
+    this.$i18n.locale = this.language
+  },
+  watch: {
+    lang (newV, oldV) {
+      this.$i18n.locale = newV
+      this.CHANGE_LANGUAGE(newV)
+    },
   },
   methods: {
     ...mapActions([
-      'USER_LOGIN'
+      'USER_LOGIN',  'CHANGE_LANGUAGE'
     ]),
     handleSignIn () {
       if (!this.$refs.form.validate()) {
@@ -161,59 +170,11 @@ export default {
       });
     },
   },
-  created() {},
 };
 </script>
 
 <style lang="scss">
-
-/*@import '../../styles/_login.scss';*/
-.app-login-wrapper {
-  width: 100%;
-  height: 100%;
-  display: block;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background: #6190E8; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.login-content {
-  width: 80%;
-  max-width: 1000px;
-  display: flex;
-  margin: auto;
-  margin-top: 100px;
-  position: relative;
-  border-radius: 4px;
-  background: white;
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-
-}
-
-.login-slogan-wrapper {
-  width: 50%;
-  max-width: 500px;
-  padding: 20px;
-  background: linear-gradient(0deg, #3a485a 0%, #607089 100%)
-}
-
-  .login-form-wrapper {
-    width: 50%;
-    max-width: 500px;
-    padding: 20px;
-  }
-
-@media (max-width: 768px) {
-  .login-slogan-wrapper {
-    display: none;
-  }
-  .login-form-wrapper {
-    width: 100%;
-  }
-}
+@import '../../assets/style/_login.scss';
 
 
 </style>

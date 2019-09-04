@@ -10,6 +10,11 @@
     "reset": "Reset",
     "filter":"Filter"
   },
+  "view": {
+    "update_pwd": "Update Password",
+    "add_user": "Add User",
+    "edit_user": "Edit User"
+  },
   "menu": {
     "home": "Home",
     "system": "System",

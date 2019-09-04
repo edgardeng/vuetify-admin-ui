@@ -120,7 +120,7 @@ import Error404 from '@/views/error/App404.vue';
 
 Vue.use(Router)
 
-export const constRouterList = [
+export const constRouters = [
   { path: '/login', name: 'Login', component: Login, hidden: true },
   { path: '/', component: Layout, header: 'menu.home', redirect: "/dashboard",
     children: [
@@ -139,6 +139,6 @@ export const constRouterList = [
 export default new Router({
   mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
-  routes: constRouterList
+  routes: constRouters
 })
 

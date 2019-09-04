@@ -65,7 +65,7 @@ const user = {
         // TODO Network get info from access_token
         let user = getObject('user')
         if (user) {
-          let authList = [] // ['user_add','user_del' ..]
+          let authList = ['user:list'] // ['user_add','user_del' ..]
           let authorities = {}
           for (let i = 0; i < authList.length; i++) {
             let item = authList[i]
@@ -75,7 +75,7 @@ const user = {
           resolve(authorities)
         } else {
           commit('SET_AUTHORITIES', undefined)
-          resolve(undefined)
+          reject()
         }
       })
     },
@@ -84,6 +84,7 @@ const user = {
       return new Promise((resolve, reject) => {
         commit('SET_AUTHORITIES', undefined)
         commit('SET_USER', undefined)
+        setObject('user', undefined)
         // TODO del access_token remote server
         // logout().then(() => { })
         resolve()

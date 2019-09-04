@@ -63,6 +63,9 @@ const permission = {
       return state.routers
     },
     router4Menu (state) { // UI menu for home
+      if (!state.routers) {
+        return []
+      }
       let len = state.routers.length
       let menus = []
       let header = ''
