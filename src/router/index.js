@@ -25,7 +25,7 @@ export const constRouters = [
 ]
 
 export default new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: constRouters
 })

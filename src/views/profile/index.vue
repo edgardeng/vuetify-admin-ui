@@ -14,7 +14,7 @@
         <v-row no-gutters >
           <v-col class="text-center" cols="12" md="6" >
             <v-avatar size="180px" class="mt-8 mb-8">
-              <img src="../../assets/avatar/default.jpg"/>
+              <img src="https://edgardeng.github.io/resource/image/favicon.jpg"/>
             </v-avatar>
             <h3 class="pb-8"> {{profile.name}} </h3>
           </v-col>

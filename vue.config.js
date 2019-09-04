@@ -1,9 +1,9 @@
 // example
 const authApi = 'xxx';
 const commonApi = 'xxx';
-const svgoConfig = require('./config/svgo-config.json');
 
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production' ? '././' : '/',
   configureWebpack: {
     externals: {
       'vue': 'Vue',
