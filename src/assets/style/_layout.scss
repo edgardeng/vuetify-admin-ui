@@ -25,16 +25,13 @@ html, body {
   background: #f0eef0;
 }
 
-.theme--light.v-app-bar {
-  background: #B3E5FC;
-}
-
-.theme--light.v-toolbar {
+.theme--light.v-app-bar, .theme--light.app-drawer-bar{
   background: #B3E5FC;
 }
 
 
 /* main view in layout */
 .app-view-content {
-
+  margin-left: 1rem;
+  margin-right: 1rem;
 }

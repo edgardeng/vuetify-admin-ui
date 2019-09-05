@@ -10,5 +10,5 @@ export default {
   created () {
     document.body.removeChild(document.getElementById('loading'))
   }
-};
+}
 </script>

@@ -2,13 +2,19 @@
   "home": "Home",
   "system": {
     "name": "Vuetify Admin",
-    "desc": "Frontend Admin UI Based on Vue2 and Boostrap 4 with vuetify"
+    "desc": "Frontend Admin UI Based on Vue2 and Boostrap 4 with vuetify",
+    "save": "Save",
+    "query": "Query",
+    "reset": "Reset",
+    "filter":"Filter",
+    "view_all": "View All"
   },
   "common": {
     "save": "Save",
     "query": "Query",
     "reset": "Reset",
-    "filter":"Filter"
+    "filter":"Filter",
+    "view_all": "View All"
   },
   "view": {
     "update_pwd": "Update Password",
@@ -38,7 +44,12 @@
     "widget": "Widget",
     "icon": "Icon",
     "alert": "Alert",
-    "avatar": "Avatar"
+    "avatar": "Avatar",
+    "component": "Component",
+    "pdf_reader": "PDF Reader",
+    "md_editor": "Markdown Editor",
+    "sql_editor": "SQL Editor",
+    "rich_text": "Rich Text"
   },
   "form": {
     "required": "Required",

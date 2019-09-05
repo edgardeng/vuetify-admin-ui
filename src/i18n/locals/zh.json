@@ -1,8 +1,12 @@
 {
-  "home": "首页",
   "system": {
     "name": "Vuetify后台系统",
-    "desc": "基于Vue2框架和Vuetify组件开发的后台管理系统前端界面"
+    "desc": "基于Vue2框架和Vuetify组件开发的后台管理系统前端界面",
+    "save": "保存",
+    "query": "查询",
+    "reset": "重置",
+    "filter": "筛选",
+    "view_all": "查看全部"
   },
   "menu": {
     "home": "主页",
@@ -20,7 +24,12 @@
     "widget": "UI控件",
     "icon": "图标",
     "alert": "提示框",
-    "avatar": "头像"
+    "avatar": "头像",
+    "component": "组件",
+    "pdf_reader": "PDF阅读器",
+    "md_editor": "Markdown编辑器",
+    "sql_editor": "SQL编辑器",
+    "rich_text": "富文本"
   },
   "view": {
     "update_pwd": "修改密码",

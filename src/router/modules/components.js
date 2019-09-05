@@ -1,64 +1,16 @@
-const routes = {
-  path: '/components',
-  name: 'Components',
-  component: {
-    template: '<router-view></router-view>',
-  },
-  meta: {
-    hasMulSub: true,
-    hidden: false,
-    icon: 'developer_board',
-  },
-  children: [
-    {
-      path: 'markdown-editor',
-      name: 'Markdown',
-      component: () => import('@/views/components/MarkdownEditor.vue'),
-      meta: {
-        icon: '',
-      },
-    },
-    {
-      path: 'json-editor',
-      name: 'JsonEditor',
-      component: () => import('@/views/components/JsonEditor.vue'),
-      meta: {
-        icon: '',
-      },
-    },
-    {
-      path: 'sql-editor',
-      name: 'SqlEditor',
-      component: () => import('@/views/components/SqlEditor.vue'),
-      meta: {
-        icon: '',
-      },
-    },
-    {
-      path: 'tinymce-editor',
-      name: 'TinymceEditor',
-      component: () => import('@/views/components/TinymceEditor.vue'),
-      meta: {},
-    },
-    {
-      path: 'pdf-reader',
-      name: 'PdfReader',
-      component: () => import('@/views/components/PdfReader.vue'),
-      meta: {},
-    },
-    {
-      path: 'maps',
-      name: 'Maps',
-      component: () => import('@/views/components/VMaps.vue'),
-      meta: {},
-    },
-    {
-      path: 'list-drag',
-      name: 'ListDrag',
-      component: () => import('@/views/components/ListDrag.vue'),
-      meta: {},
-    },
-  ],
-};
+import { Layout } from '../index'
 
-export default routes;
+const Markdown = () => import(/* webpackChunkName: "pdf" */ '@/views/components/MarkdownEditor.vue')
+const Sql = () => import(/* webpackChunkName: "pdf" */ '@/views/components/SqlEditor.vue')
+const RichText = () => import(/* webpackChunkName: "pdf" */ '@/views/components/TinymceEditor.vue')
+
+const routes = {
+  path: '/components', component: Layout, icon: 'mdi-widgets' , name: 'menu.component', redirect: "/markdown",
+  children: [
+    { path: '/markdown', component: Markdown, name: 'menu.md_editor'},
+    { path: '/sql', component: Sql, name: 'menu.sql_editor'},
+    { path: '/rich-text', component: RichText, name: 'menu.rich_text'}
+  ]
+}
+
+export default routes

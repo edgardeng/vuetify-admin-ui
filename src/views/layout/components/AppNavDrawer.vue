@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer class="app-drawer" app v-model="showDrawer" :width="drawWidth">
-    <v-toolbar >
+    <v-toolbar class="app-drawer-bar">
       <img src="../../../assets/logo.svg" height="36" />
       <v-toolbar-title class="ml-0 pl-3">
         <span >{{$t('system.name')}}</span>

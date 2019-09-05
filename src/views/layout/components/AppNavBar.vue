@@ -9,15 +9,15 @@
 
     <v-menu offset-y origin="center center" class="elelvation-1" :nudge-bottom="14" transition="scale-transition">
       <template v-slot:activator="{ on }">
-      <v-btn icon slot="activator" v-on="on">
-        <v-badge color="red" overlap>
-          <span slot="badge">3</span>
+      <v-btn icon slot="activator" v-on="on" >
+        <v-badge color="red" overlap v-model="notices">
+          <span slot="badge">{{notices}}</span>
           <v-icon >mdi-bell</v-icon>
         </v-badge>
       </v-btn>
       </template>
       <!-- 此处可以放通知列表 -->
-      <v-list> </v-list>
+      <notification-list> </notification-list>
     </v-menu>
 
     <v-menu offset-y origin="center center" :nudge-bottom="10">
@@ -88,26 +88,28 @@
 
 </template>
 <script>
-// import NotificationList from "@/components/widgets/list/NotificationList"
+import NotificationList from "./NotificationList"
 import { toggleFullScreen } from "@/utils/brower_help"
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: "AppToolbar",
   components: {
-    // NotificationList
+    NotificationList
   },
   data() {
     return {
       langEn: false,
       isDark: false,
-      dialog: false
+      dialog: false,
+      notice: 1
     }
   },
   computed: {
     ...mapGetters({
       theme: 'theme',
-      language: 'language'
+      language: 'language',
+      notices: 'notices'
     })
   },
   mounted () {

@@ -22,6 +22,26 @@
 
 * Compiles and minifies for production `npm run build`
 
+## Introduction
+
+
+### ScreenShot
+
+Login Page (中文)
+
+![1](./docs/img/screenshot-1.png)
+
+Login Page (English)
+
+![2](./docs/img/screenshot-2.png)
+
+Dashboard - Light Theme
+
+![3](./docs/img/screenshot-3.png)
+
+Dashboard - Dark Theme
+
+![4](./docs/img/screenshot-4.png)
 
 ## Reference
 

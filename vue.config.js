@@ -11,7 +11,9 @@ module.exports = {
       'vuex': 'Vuex',
       'axios': 'axios',
       'vuetify': 'Vuetify',
-      'echarts': 'echarts'
+      'echarts': 'echarts',
+      // 'marked': 'marked',
+      // 'highlight': 'highlight'
     },
 
   },

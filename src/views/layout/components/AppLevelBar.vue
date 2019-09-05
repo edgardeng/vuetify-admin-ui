@@ -22,7 +22,7 @@
       //{ href: string disabled: boolean link: boolean text: string | number to: string | object
       getBreadcrumb () {
         const { path, matched } = this.$route;
-        const items = [{ text: 'home', to: '/', disabled: false}];
+        const items = [{ text: 'menu.home', to: '/', disabled: false}];
         for (let i = 0, len = matched.length; i < len; i += 1) {
           const route = matched[i];
           if (route.name) {

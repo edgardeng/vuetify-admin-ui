@@ -1,8 +1,7 @@
 <template>
-  <markdown-editor
-    v-model="markdownText"
-    placeholder=""
-  />
+  <div class="app-view-content">
+    <markdown-editor v-model="markdownText" placeholder="" />
+  </div>
 </template>
 
 <script>
