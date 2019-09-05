@@ -52,14 +52,15 @@ router.beforeEach((to, from, next) => {
       } else {
         next()
       }
+      console.log(error)
     })
   } else {
     next() // 有 token 有menus
   }
 })
 
-router.afterEach(transition => {
-  // console.log('main is going  ok')
+router.afterEach(() => {
+
   setTimeout(() => {
     store.commit('SET_LOADING', false)
   }, 500)

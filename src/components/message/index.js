@@ -1,15 +1,15 @@
-import Vue from 'vue';
-import VMain from './main.vue';
+import Vue from 'vue'
+import VMain from './main.vue'
 
-const SnackbarConstructor = Vue.extend(VMain);
+const SnackbarConstructor = Vue.extend(VMain)
 
-let instance;
-let seed = 1;
-const instances = [];
+let instance
+let seed = 1
+const instances = []
 
 const Snackbar = (options) => {
-  let opts = options || {};
-  const id = `message_${seed += 1}`;
+  let opts = options || {}
+  const id = `message_${seed += 1}`
 
   if (typeof opts === 'string') {
     opts = {
@@ -19,26 +19,26 @@ const Snackbar = (options) => {
 
   instance = new SnackbarConstructor({
     data: opts,
-  });
+  })
 
-  instance.id = id;
-  instance.vm = instance.$mount();
+  instance.id = id
+  instance.vm = instance.$mount()
 
-  let app = document.getElementById("app-inspire") // snackbar put in v-app
+  const app = document.getElementById('app-inspire') // snackbar put in v-app
   if (!app) {
     return undefined
   }
-  app.appendChild(instance.vm.$el);
-  instance.vm.visible = true;
-  instance.dom = instance.vm.$el;
-  instance.dom.style.zIndex = seed + 1001;
-  instances.push(instance);
-  return instance.vm;
+  app.appendChild(instance.vm.$el)
+  instance.vm.visible = true
+  instance.dom = instance.vm.$el
+  instance.dom.style.zIndex = seed + 1001
+  instances.push(instance)
+  return instance.vm
 };
 
 ['success', 'warning', 'info', 'error'].forEach((type) => {
   Snackbar[type] = (options) => {
-    let opts = options || {};
+    let opts = options || {}
 
     if (typeof opts === 'string') {
       opts = {
@@ -46,15 +46,15 @@ const Snackbar = (options) => {
       };
     }
 
-    opts.type = type;
-    return Snackbar(opts);
+    opts.type = type
+    return Snackbar(opts)
   };
 });
 
 Snackbar.close = (id) => {
   for (let i = 0, len = instances.length; i < len; i += 1) {
     if (id === instances[i].id) {
-      instances.splice(i, 1);
+      instances.splice(i, 1)
       break;
     }
   }
@@ -65,8 +65,8 @@ Snackbar.close = (id) => {
  */
 Snackbar.closeAll = () => {
   for (let i = 0, len = instances.length; i < len; i += 1) {
-    instances[i].close();
+    instances[i].close()
   }
-};
+}
 
-export default Snackbar;
+export default Snackbar

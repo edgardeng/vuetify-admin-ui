@@ -4,11 +4,9 @@ import VMain from './main.vue'
 const VConstructor = Vue.extend(VMain)
 let instance
 
-const MessageConfirm = function(vuetify, message, callback) {
+const MessageConfirm = (vuetify, message, callback) => {
 
-  let options = {
-    message, callback
-  }
+  const options = { message, callback }
 
   instance = new VConstructor({
     data: options,
@@ -16,7 +14,7 @@ const MessageConfirm = function(vuetify, message, callback) {
   instance.$vuetify = vuetify // 传入$vuetify实例 暂时没有更好的方法, 最好在main.vue中获取
 
   instance.vm = instance.$mount()
-  let app = document.getElementById("app-inspire") // snackbar put in v-app
+  const app = document.getElementById('app-inspire') // snackbar put in v-app
   if (app) {
     app.appendChild(instance.vm.$el)
     instance.vm.visible = true

@@ -1,7 +1,8 @@
-import Layout from '@/views/layout';
-import Icon from '@/views/widgets/icon';
-import Alert from '@/views/widgets/alert';
-import Avatar from '@/views/widgets/avatar';
+import { Layout } from '../index'
+
+const Icon = () => import(/* webpackChunkName: "icons" */ '@/views/widgets/icon')
+const Alert = () => import(/* webpackChunkName: "alerts" */ '@/views/widgets/alert')
+const Avatar = () => import(/* webpackChunkName: "avatars" */ '@/views/widgets/avatar')
 
 const routes = {
   path: '/widgets', component: Layout, header: 'menu.widget', name: 'menu.widget', redirect: "/widget/icon", icon: "mdi-widgets",

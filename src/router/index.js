@@ -1,12 +1,16 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Login from '@/views/auth/Login.vue';
-import Layout from '@/views/layout';
-import DashBoard from '@/views/dashboard';
-import Profile from '@/views/profile';
-import Error404 from '@/views/error/App404.vue';
+
+export const Layout = () => import(/* webpackChunkName: "layout" */'@/views/layout')
+
+const Login = () => import(/* webpackChunkName: "login" */ '@/views/auth/Login')
+const DashBoard = () => import(/* webpackChunkName: "dashboard" */ '@/views/dashboard')
+const Profile = () => import(/* webpackChunkName: "profile" */ '@/views/profile')
+const Error404 = () => import(/* webpackChunkName: "404" */ '@/views/error/404')
+
 
 Vue.use(VueRouter)
+
 
 export const constRouters = [
   { path: '/login', name: 'Login', component: Login, hidden: true },

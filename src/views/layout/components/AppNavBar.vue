@@ -25,7 +25,7 @@
         <!--<v-icon>mdi-menu-down</v-icon>-->
         <v-btn text large v-on="on" class="pr-0">
           <v-avatar size="32px">
-            <img src="../../../assets/avatar/default.jpg"/>
+            <img src="https://edgardeng.github.io/resource/image/favicon.jpg"/>
           </v-avatar>
             <v-icon>mdi-menu-down</v-icon>
         </v-btn>
@@ -134,7 +134,6 @@ export default {
       'CHANGE_THEME', 'CHANGE_LANGUAGE', 'USER_LOGOUT'
     ]),
     handleFullScreen() {
-      this.$message.error('你好.....')
       toggleFullScreen()
     },
     dialogSignOut() {
@@ -142,7 +141,10 @@ export default {
     },
     handleSignOut() {
       this.USER_LOGOUT().then(info => {
-        window.location.href = '/#/login'
+        // window.location.href = '/#/login'
+        // this.$router.push('/login')
+        this.dialog = false
+        window.location.reload();
       })
     },
     handleChangeTheme () {
@@ -154,4 +156,3 @@ export default {
   }
 }
 </script>
-

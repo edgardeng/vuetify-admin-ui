@@ -12,7 +12,8 @@ module.exports = {
       'axios': 'axios',
       'vuetify': 'Vuetify',
       'echarts': 'echarts'
-    }
+    },
+
   },
   devServer: {
     proxy: {

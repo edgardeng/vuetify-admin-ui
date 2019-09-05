@@ -3,7 +3,7 @@
  *
  * Param : token, visitedViews
  */
-import { getObject, setObject } from "@/utils/cookie";
+import { getObject, setObject } from "@/utils/cookie"
 const user = {
   state: {
     user: undefined,
@@ -34,7 +34,6 @@ const user = {
     //   state.menus = menus
     // },
     SET_AUTHORITIES: (state, data) => {
-      console.log('SET_AUTHORITIES', data)
       state.authorities = data
     },
     SET_USER: (state, user) => {
@@ -45,7 +44,6 @@ const user = {
   actions: {
     // 用户登录
     USER_LOGIN ({ commit }, userInfo) {
-      console.log('USER_LOGIN')
       let username = userInfo.username.trim()
       let password = userInfo.password
       commit('SET_AUTHORITIES', undefined)
@@ -64,10 +62,10 @@ const user = {
     USER_INFO ({ commit }, info) {
       return new Promise((resolve, reject) => {
         // TODO Network get info from access_token
-        let user = getObject('user')
-        if (user) {
-          let authList = ['user:list'] // ['user_add','user_del' ..]
-          let authorities = {}
+        let u = getObject('user')
+        if (u) {
+          const authList = ['user:list'] // ['user_add','user_del' ..]
+          const authorities = {}
           for (let i = 0; i < authList.length; i++) {
             let item = authList[i]
             authorities[item] = true

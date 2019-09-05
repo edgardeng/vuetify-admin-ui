@@ -63,6 +63,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'semi': 0,
     'arrow-parens': 0,
     'generator-star-spacing': 0,
     'no-undef': 1,

@@ -136,32 +136,6 @@ export default {
     handleSignUp () {
       console.log('Register', this.username, this.password)
     },
-    login() {
-      if (!this.form.password || !this.form.username) {
-        return;
-      }
-
-      this.loginLoading = true;
-      this.$store
-        .dispatch('login', this.form)
-        .then(() => {
-          try {
-            this.$router.push({ name: 'Index' });
-          } catch (err) {
-            this.$router.push({ path: '/' });
-          }
-        })
-        .catch((res) => {
-          console.log('login-failed', res);
-          this.$message({
-            type: 'error',
-            text: this.$t('common.invalid_password_username'),
-          });
-        })
-        .finally(() => {
-          this.loginLoading = false;
-        });
-    },
     redirectForgotPassword() {
       console.log('redirectForgotPassword');
       this.$message({
