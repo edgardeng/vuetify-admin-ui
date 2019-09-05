@@ -13,6 +13,7 @@
     "notification": "系统通知",
     "users": "用户管理",
     "menus": "菜单管理",
+    "roles": "角色管理",
     "authorities": "权限管理",
     "users_edit": "用户编辑",
     "dark_theme": "深色主题",
@@ -25,6 +26,13 @@
     "update_pwd": "修改密码",
     "add_user": "添加用户",
     "edit_user": "编辑用户"
+  },
+  "dashboard": {
+    "visitorsNumber": "访问人数",
+    "requestsNumber": "请求数",
+    "yesterday": "昨天",
+    "dayBeforeYesterday": "前天",
+    "visitorDistribution": "访问者分布"
   },
   "form": {
     "required": "必填项",

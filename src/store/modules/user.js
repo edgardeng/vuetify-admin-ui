@@ -64,7 +64,7 @@ const user = {
         // TODO Network get info from access_token
         let u = getObject('user')
         if (u) {
-          const authList = ['user:list'] // ['user_add','user_del' ..]
+          const authList = ['user:list', 'menu:list', 'role:list'] // ['user_add','user_del' ..]
           const authorities = {}
           for (let i = 0; i < authList.length; i++) {
             let item = authList[i]

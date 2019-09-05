@@ -36,16 +36,12 @@ export default {
       let tempTime = new Date();
 
       for (let i = 0; i < this.num; i += 1) {
-        // console.log('====', this.$moment(tempTime).format('HH:mm:ss'));
-        // data.unshift(tempTime.toLocaleTimeString('en-US', { hour12: false }));
-        // tempTime = new Date(tempTime - this.interval);
         data.unshift(this.$moment(tempTime).format(this.timeFormat));
         tempTime = this.$moment(tempTime).subtract(
           this.interval / 1000,
           'seconds',
         );
       }
-
       return data;
     },
     buildChartOption(data) {

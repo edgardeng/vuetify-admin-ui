@@ -15,6 +15,13 @@
     "add_user": "Add User",
     "edit_user": "Edit User"
   },
+  "dashboard": {
+    "visitorsNumber": "Number of visitors",
+    "requestsNumber": "Number of requests",
+    "yesterday": "Yesterday",
+    "dayBeforeYesterday": "The day before yesterday",
+    "visitorDistribution": "Distribution of visitors"
+  },
   "menu": {
     "home": "Home",
     "system": "System",
@@ -23,6 +30,7 @@
     "system_manage": "System Manage",
     "users": "User",
     "menus": "Menu",
+    "roles": "Role",
     "authorities": "Authority",
     "notification": "Notification",
     "users_edit": "Edit",

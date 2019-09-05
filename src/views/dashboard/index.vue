@@ -3,31 +3,27 @@
     <v-row justify="center" align="center" >
 
       <v-col cols="12">
-        <v-row justify="around" align="center" >
-          <v-col class="ma-3 pa-6" key="index"
+        <v-row justify="between" align="center" >
+          <v-col class=" pa-6" key="index"
                   v-for="(config, index) in indicatorConfig">
             <separate-indicator :config="config" />
           </v-col>
         </v-row>
       </v-col>
 
-
-      <v-col cols="12">
+      <v-col cols="12" class="pa-6">
         <dynamic-analysis />
       </v-col>
 
-
-      <v-col cols="12">
+      <v-col cols="12" class="px-6">
         <total-statistics />
       </v-col>
 
-
-      <v-col cols="12">
+      <v-col cols="12" class="pa-6">
         <visitors-location />
       </v-col>
 
     </v-row>
-
   </div>
 </template>
 
