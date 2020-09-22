@@ -15,7 +15,6 @@ module.exports = {
       // 'marked': 'marked',
       // 'highlight': 'highlight'
     },
-
   },
   devServer: {
     proxy: {
